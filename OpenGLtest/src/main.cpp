@@ -1,40 +1,57 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <vector>
+#include <imgui.h>
+#include <backends/imgui_impl_glfw.h>
+#include <backends/imgui_impl_opengl3.h>
+//#include <glm/glm.hpp>
+//#include <glm/gtc/matrix_transform.hpp>
+//#include <glm/gtc/type_ptr.hpp>
 
+
+// --------------- グローバル変数 ----------------
 const int MAX_VERTICES_PER_TRIANGLE = 3;
-std::vector<float> triangleVertices; // クリックされた頂点の座標 (x, y, x, y, ...)
-int currentVertexCount = 0;
+//頂点データを管理するベクタ
+std::vector<float> triangleVertices;
+std::vector<float> freehandVertices;
+int currentVertexCount = 0; // 三角形描画時の頂点カウント
 
-//ウインドウサイズ
-unsigned int SCR_WIDTH = 800; // 例: 800
-unsigned int SCR_HEIGHT = 600; // 例: 600
+unsigned int SCR_WIDTH = 800;
+unsigned int SCR_HEIGHT = 600;
 
-//将来的にこれらを管理するクラスを作成
-unsigned int VAO, VBO;
-
+unsigned int VAO, VBO; // 描画オブジェクト (今回は共有)
 unsigned int shaderProgram;
 
+bool isMouseButtonDown = false; // マウスボタンが押されているか
 
+
+//---------------------描画モード------------------------
+enum class DrawingMode {
+	TRIANGLE,
+	FREEHAND
+};
+DrawingMode currentMode = DrawingMode::TRIANGLE;
+
+//---------------------コールバック関数のプロトタイプ宣言-----------------------
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
-
-//コールバック関数
+//マウスクリック時のコールバック
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+// マウス移動時のコールバック
+void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
+//キーが押されたときのコールバック
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods); // 新設
 
+
+//-----------------シェーダー関連のプロトタイプ宣言---------------------
 //シェーダーを読み込んで文字列として返す
 std::string loadShaderSource(const char* filePath);
-
 //shaderをコンパイルする関数
 unsigned int compileShader(unsigned int type, const char* source);
-
 //頂点シェーダーとフラグメントシェーダーをリンクしてシェーダープログラムを作成する
 unsigned int createShaderProgram(const char* vertexPath, const char* fragmentPath);
 
@@ -46,7 +63,6 @@ int main() {
 		std::cerr << "Failed to initialize GLFW" << std::endl;
 		return -1;
 	}
-
 
 	// openGL version 3.3
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -61,8 +77,12 @@ int main() {
 		return -1; //終了処理
 	}
 	glfwMakeContextCurrent(window);
-	glfwSetMouseButtonCallback(window, mouse_button_callback);
+
+	//コールバック関数の登録
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+	glfwSetMouseButtonCallback(window, mouse_button_callback);
+	glfwSetCursorPosCallback(window, cursor_position_callback);
+	glfwSetKeyCallback(window, key_callback); // キーコールバックを登録
 
 	// glad初期化: OpenGL関数ポインタをロード
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
@@ -70,6 +90,22 @@ int main() {
 		glfwTerminate();
 		return -1;
 	}
+
+	// --- ImGuiのセットアップ ---
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	// io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // キーボードナビゲーションが必要な場合
+	// io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;  // ゲームパッドナビゲーションが必要な場合
+
+	// ImGuiのスタイル設定 (任意)
+	ImGui::StyleColorsDark();
+	// ImGui::StyleColorsClassic();
+
+	// プラットフォーム/レンダラーバックエンドの初期化
+	ImGui_ImplGlfw_InitForOpenGL(window, true); // 'true' はコールバックをインストールするかどうか
+	ImGui_ImplOpenGL3_Init("#version 330 core"); // GLSLのバージョン文字列
+
 
 	// シェーダープログラムの作成
 	shaderProgram = createShaderProgram("src/shader.vert", "src/shader.frag"); // ファイルパスを指定
@@ -92,15 +128,14 @@ int main() {
 	*/
 	glGenVertexArrays(1, &VAO);//VAOを生成
 	glGenBuffers(1, &VBO);//VBOを生成
-
 	glBindVertexArray(VAO); // VAOをバインド(選択)
-
 	glBindBuffer(GL_ARRAY_BUFFER, VBO); // VBOをバインド(選択)
 
 	//glBufferData(GL_ARRAY_BUFFER, size, data, usage) 
 	//実際の頂点データをVBOにアップロードする
 	//GL_DYNAMIC__DRAW=データが頻繁に更新されるよ
-	glBufferData(GL_ARRAY_BUFFER, MAX_VERTICES_PER_TRIANGLE * 2 * sizeof(float), nullptr, GL_DYNAMIC_DRAW);
+	//千頂点分登録
+	glBufferData(GL_ARRAY_BUFFER, 1000 * 2 * sizeof(float), nullptr, GL_DYNAMIC_DRAW);
 
 	// 頂点属性の設定 (位置情報)
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
@@ -114,46 +149,89 @@ int main() {
 		// 入力処理 (例: ESCキーで閉じるなど)
 		processInput(window); // processInput関数は別途定義されていると仮定
 
+		glfwPollEvents(); // ImGui_ImplGlfw_NewFrame の前にイベント処理
+
+		// --- ImGuiの新しいフレームを開始 ---
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+		ImGui::NewFrame();
+
+		// --- ここにImGuiのUI要素を記述 ---
+		// 画面左上に現在のモードを表示
+		ImGui::SetNextWindowPos(ImVec2(10, 10)); // 表示位置 (左上から10,10ピクセル)
+		ImGui::Begin("Current Mode", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav);
+		if (currentMode == DrawingMode::TRIANGLE) {
+			ImGui::Text("Mode: Triangle");
+		}
+		else if (currentMode == DrawingMode::FREEHAND) {
+			ImGui::Text("Mode: Freehand");
+		}
+		ImGui::End();
+		// --- ImGuiのUI要素記述ここまで ---
+		
+
 		// レンダリングコマンド
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClearColor(0.9f, 0.9f, 0.9f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// シェーダープログラムを使用
 		glUseProgram(shaderProgram); // shaderProgram は事前に作成したシェーダープログラムのID
 
-		// 頂点データが更新されたらVBOに再送信
-		if (!triangleVertices.empty()) {
-			glBindBuffer(GL_ARRAY_BUFFER, VBO);
-			// VBOの先頭からデータを更新
-			glBufferSubData(GL_ARRAY_BUFFER, 0, triangleVertices.size() * sizeof(float), triangleVertices.data());
-			glBindBuffer(GL_ARRAY_BUFFER, 0); // 安全のためアンバインド
-		}
-
 		glBindVertexArray(VAO); // 描画に使うVAOをバインド
 
-		if (currentVertexCount == 1) {
-			// 点を描画 (オプション)
-			glPointSize(4.0f); // 点の大きさを設定
-			glDrawArrays(GL_POINTS, 0, 1);
-		}
-		else if (currentVertexCount == 2) {
-			// 線を描画 (オプション、プレビュー用)
-			glDrawArrays(GL_LINES, 0, 2);
-		}
-		else if (currentVertexCount == MAX_VERTICES_PER_TRIANGLE) {
-			// 三角形を描画
+		if (currentMode == DrawingMode::TRIANGLE) {
+			// --- 三角形描画モードの処理 ---
+			if (!triangleVertices.empty()) {
+				glBindBuffer(GL_ARRAY_BUFFER, VBO);
+				glBufferSubData(GL_ARRAY_BUFFER, 0, triangleVertices.size() * sizeof(float), triangleVertices.data());
+				// VBOをアンバインドしない（VAOがVBOの参照を保持しているため、描画直前までバインドされている想定でOK）
+			}
 
-			glDrawArrays(GL_TRIANGLES, 0, MAX_VERTICES_PER_TRIANGLE);
+			if (currentVertexCount == 1) {
+				glPointSize(4.0f);
+				glDrawArrays(GL_POINTS, 0, 1);
+			}
+			else if (currentVertexCount == 2) {
+				glDrawArrays(GL_LINES, 0, 2);
+			}
+			else if (currentVertexCount == MAX_VERTICES_PER_TRIANGLE) {
+				glDrawArrays(GL_TRIANGLES, 0, MAX_VERTICES_PER_TRIANGLE);
+				// 三角形描画後のリセットはmouse_button_callbackで行うように変更済み
+			}
+		}
+		else if (currentMode == DrawingMode::FREEHAND) {
+			// --- 自由線描画モードの処理 ---
+			if (!freehandVertices.empty() && freehandVertices.size() >= 4) { // 少なくとも2点(4float)ないと線は描けない
+				glBindBuffer(GL_ARRAY_BUFFER, VBO);
+				glBufferSubData(GL_ARRAY_BUFFER, 0, freehandVertices.size() * sizeof(float), freehandVertices.data());
+
+				//GL_LINE_STRIPでは頂点を結ぶ直線を描く
+				glDrawArrays(GL_LINE_STRIP, 0, freehandVertices.size() / 2);
+			}
 		}
 
 		glBindVertexArray(0); // VAOのバインド解除
 
+
+		// --- ImGuiの描画 ---
+		ImGui::Render();
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		// --- ImGuiの描画ここまで ---
+
 		glfwSwapBuffers(window);
-		glfwPollEvents();
+
 	}
 
-	glDeleteProgram(shaderProgram); // シェーダープログラムを削除
-	
+	// --- ImGuiのクリーンアップ ---
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+	ImGui::DestroyContext();
+	// --- ImGuiのクリーンアップここまで ---
+
+
+	glDeleteVertexArrays(1, &VAO); // VAOの削除
+	glDeleteBuffers(1, &VBO);   // VBOの削除
+	glDeleteProgram(shaderProgram);
 	glfwTerminate();
 
 
@@ -162,6 +240,8 @@ int main() {
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
+	SCR_WIDTH = width;  // ウィンドウリサイズ時にグローバル変数も更新
+	SCR_HEIGHT = height;
 }
 
 // 入力処理関数 (ESCキーでウィンドウを閉じる例)
@@ -170,36 +250,91 @@ void processInput(GLFWwindow* window) {
 		glfwSetWindowShouldClose(window, true);
 }
 
-//クリックされた座標を取得し、頂点データとして保存する
-void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
-	//マウス右クリックの時
-	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
-		if (currentVertexCount == MAX_VERTICES_PER_TRIANGLE) {
-			// 既に1つの三角形を完成してる場合 → 新しい三角形を描く準備
+// --- キー入力コールバック関数 ---
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+	if (key == GLFW_KEY_M && action == GLFW_PRESS) {
+		if (currentMode == DrawingMode::TRIANGLE) {
+			currentMode = DrawingMode::FREEHAND;
+			glfwSetWindowTitle(window, "2D Drawing App (Mode: FREEHAND)");
+			std::cout << "Mode changed to: FREEHAND" << std::endl;
+			// モード変更時に描画途中のデータをクリアする
 			triangleVertices.clear();
 			currentVertexCount = 0;
-			std::cout << "Triangle drawn. Ready for next triangle." << std::endl;
+			freehandVertices.clear();
 		}
-		if (currentVertexCount < MAX_VERTICES_PER_TRIANGLE) {
-			double xpos, ypos;
-			glfwGetCursorPos(window, &xpos, &ypos); // ウィンドウ座標を取得
-
-			// ウィンドウ座標をOpenGLの正規化デバイス座標 (-1.0 to 1.0) に変換
-			//ウインドウ座標系では左上が原点なため、Y軸が反転する。
-			float ndcX = (float)(xpos / SCR_WIDTH) * 2.0f - 1.0f;
-			float ndcY = 1.0f - (float)(ypos / SCR_HEIGHT) * 2.0f; // Y軸は反転
-
-			triangleVertices.push_back(ndcX);
-			triangleVertices.push_back(ndcY);
-			//頂点クリック数カウント++
-			currentVertexCount++;
-
-			std::cout << "Vertex " << currentVertexCount << " added at: (" << ndcX << ", " << ndcY << ")" << std::endl;
-
-			// (VBO更新処理は描画ループかここで行う - 後述)
+		else {
+			currentMode = DrawingMode::TRIANGLE;
+			glfwSetWindowTitle(window, "2D Drawing App (Mode: TRIANGLE)");
+			std::cout << "Mode changed to: TRIANGLE" << std::endl;
+			// モード変更時に描画途中のデータをクリアする
+			triangleVertices.clear();
+			currentVertexCount = 0;
+			freehandVertices.clear();
 		}
 	}
 }
+
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
+    if (button == GLFW_MOUSE_BUTTON_LEFT) {
+        if (action == GLFW_PRESS) {
+            isMouseButtonDown = true;
+            if (currentMode == DrawingMode::TRIANGLE) {
+                if (currentVertexCount == MAX_VERTICES_PER_TRIANGLE) {
+                    triangleVertices.clear();
+                    currentVertexCount = 0;
+                    std::cout << "Ready for next triangle." << std::endl;
+                }
+                // currentVertexCount < MAX_VERTICES_PER_TRIANGLE のチェックは不要になる（常に新しい頂点を追加）
+                double xpos, ypos;
+                glfwGetCursorPos(window, &xpos, &ypos);
+				//ディスプレイ座標からOpenGLの座標系に
+                float ndcX = (float)(xpos / SCR_WIDTH) * 2.0f - 1.0f;
+                float ndcY = 1.0f - (float)(ypos / SCR_HEIGHT) * 2.0f;
+				//頂点ベクタに格納
+                triangleVertices.push_back(ndcX);
+                triangleVertices.push_back(ndcY);
+				//カウントアップ
+                currentVertexCount++;
+                std::cout << "Vertex " << currentVertexCount << " added for triangle at: (" << ndcX << ", " << ndcY << ")" << std::endl;
+
+            } else if (currentMode == DrawingMode::FREEHAND) {
+                freehandVertices.clear(); // 新しい線を描き始めるのでクリア
+                // 最初の点を追加 (cursor_position_callbackでも追加されるので、ここでは不要かもしれない)
+                // double xpos, ypos;
+                // glfwGetCursorPos(window, &xpos, &ypos);
+                // float ndcX = (float)(xpos / SCR_WIDTH) * 2.0f - 1.0f;
+                // float ndcY = 1.0f - (float)(ypos / SCR_HEIGHT) * 2.0f;
+                // freehandVertices.push_back(ndcX);
+                // freehandVertices.push_back(ndcY);
+                // std::cout << "Freehand drawing started at: (" << ndcX << ", " << ndcY << ")" << std::endl;
+            }
+        } else if (action == GLFW_RELEASE) {
+            isMouseButtonDown = false;
+            if (currentMode == DrawingMode::FREEHAND) {
+                std::cout << "Freehand drawing ended. Points: " << freehandVertices.size() / 2 << std::endl;
+                // ここでfreehandVerticesを永続的な描画リストに追加するなどの処理も考えられる
+            }
+        }
+    }
+}
+
+//カーソル位置のコールバック
+void cursor_position_callback(GLFWwindow* window, double xpos_window, double ypos_window) {
+	if (isMouseButtonDown && currentMode == DrawingMode::FREEHAND) {
+		float ndcX = (float)(xpos_window / SCR_WIDTH) * 2.0f - 1.0f;
+		float ndcY = 1.0f - (float)(ypos_window / SCR_HEIGHT) * 2.0f;
+
+		// 前の点と同じでなければ追加 (点の重複を避ける)
+		if (freehandVertices.empty() ||
+			freehandVertices[freehandVertices.size() - 2] != ndcX ||
+			freehandVertices[freehandVertices.size() - 1] != ndcY)
+		{
+			freehandVertices.push_back(ndcX);
+			freehandVertices.push_back(ndcY);
+		}
+	}
+}
+
 
 // シェーダーファイルを読み込んで文字列として返す関数
 std::string loadShaderSource(const char* filePath) {
