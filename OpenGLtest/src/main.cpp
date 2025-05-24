@@ -3,6 +3,9 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <string>
+#include <fstream>
+#include <sstream>
 #include <iostream>
 #include <vector>
 
@@ -11,11 +14,13 @@ std::vector<float> triangleVertices; // クリックされた頂点の座標 (x, y, x, y, ..
 int currentVertexCount = 0;
 
 //ウインドウサイズ
-extern const unsigned int SCR_WIDTH = 800; // 例: 800
-extern const unsigned int SCR_HEIGHT = 600; // 例: 600
+unsigned int SCR_WIDTH = 800; // 例: 800
+unsigned int SCR_HEIGHT = 600; // 例: 600
 
+//将来的にこれらを管理するクラスを作成
 unsigned int VAO, VBO;
 
+unsigned int shaderProgram;
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -23,6 +28,15 @@ void processInput(GLFWwindow* window);
 
 //コールバック関数
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+
+//シェーダーを読み込んで文字列として返す
+std::string loadShaderSource(const char* filePath);
+
+//shaderをコンパイルする関数
+unsigned int compileShader(unsigned int type, const char* source);
+
+//頂点シェーダーとフラグメントシェーダーをリンクしてシェーダープログラムを作成する
+unsigned int createShaderProgram(const char* vertexPath, const char* fragmentPath);
 
 int main() {
 	std::cout << "Hello World!" << std::endl;
@@ -33,7 +47,6 @@ int main() {
 		return -1;
 	}
 
-	glfwInit();
 
 	// openGL version 3.3
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -58,19 +71,38 @@ int main() {
 		return -1;
 	}
 
-	// ... (gladLoadGLLoader の後)
-	glGenVertexArrays(1, &VAO);
-	glGenBuffers(1, &VBO);
+	// シェーダープログラムの作成
+	shaderProgram = createShaderProgram("src/shader.vert", "src/shader.frag"); // ファイルパスを指定
+	if (shaderProgram == 0) {
+		// シェーダー作成失敗時の処理 (例えばプログラム終了)
+		glfwTerminate();
+		return -1;
+	}
 
-	glBindVertexArray(VAO); // VAOをバインド
 
-	glBindBuffer(GL_ARRAY_BUFFER, VBO); // VBOをバインド
-	// 最初は十分なサイズを確保しておくか、描画時にデータを送る
-	// ここでは、最大3頂点 * 2座標 (x,y) 分のfloatを確保
+	// VAOとVBOを生成して設定
+	/*
+		VBOは頂点情報を格納するGPB側のバッファ(メモリ領域)
+		VAOはバッファオブジェクトの属性をまとめ、シェーダーへ橋渡しする
+
+		1.頂点データを準備
+		2.VBOに頂点データを格納
+		3.VAOにVBOをまとめる
+		4.シェーダーを適用し、ドローコールで描画
+	*/
+	glGenVertexArrays(1, &VAO);//VAOを生成
+	glGenBuffers(1, &VBO);//VBOを生成
+
+	glBindVertexArray(VAO); // VAOをバインド(選択)
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBO); // VBOをバインド(選択)
+
+	//glBufferData(GL_ARRAY_BUFFER, size, data, usage) 
+	//実際の頂点データをVBOにアップロードする
+	//GL_DYNAMIC__DRAW=データが頻繁に更新されるよ
 	glBufferData(GL_ARRAY_BUFFER, MAX_VERTICES_PER_TRIANGLE * 2 * sizeof(float), nullptr, GL_DYNAMIC_DRAW);
 
 	// 頂点属性の設定 (位置情報)
-	// layout (location = 0) に対応
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
@@ -101,7 +133,7 @@ int main() {
 
 		if (currentVertexCount == 1) {
 			// 点を描画 (オプション)
-			glPointSize(10.0f); // 点の大きさを設定
+			glPointSize(4.0f); // 点の大きさを設定
 			glDrawArrays(GL_POINTS, 0, 1);
 		}
 		else if (currentVertexCount == 2) {
@@ -110,12 +142,8 @@ int main() {
 		}
 		else if (currentVertexCount == MAX_VERTICES_PER_TRIANGLE) {
 			// 三角形を描画
-			glDrawArrays(GL_TRIANGLES, 0, MAX_VERTICES_PER_TRIANGLE);
 
-			// 描画後、次の三角形のためにリセット
-			triangleVertices.clear();
-			currentVertexCount = 0;
-			std::cout << "Triangle drawn. Ready for next triangle." << std::endl;
+			glDrawArrays(GL_TRIANGLES, 0, MAX_VERTICES_PER_TRIANGLE);
 		}
 
 		glBindVertexArray(0); // VAOのバインド解除
@@ -124,7 +152,7 @@ int main() {
 		glfwPollEvents();
 	}
 
-	
+	glDeleteProgram(shaderProgram); // シェーダープログラムを削除
 	
 	glfwTerminate();
 
@@ -146,11 +174,18 @@ void processInput(GLFWwindow* window) {
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
 	//マウス右クリックの時
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
+		if (currentVertexCount == MAX_VERTICES_PER_TRIANGLE) {
+			// 既に1つの三角形を完成してる場合 → 新しい三角形を描く準備
+			triangleVertices.clear();
+			currentVertexCount = 0;
+			std::cout << "Triangle drawn. Ready for next triangle." << std::endl;
+		}
 		if (currentVertexCount < MAX_VERTICES_PER_TRIANGLE) {
 			double xpos, ypos;
 			glfwGetCursorPos(window, &xpos, &ypos); // ウィンドウ座標を取得
 
 			// ウィンドウ座標をOpenGLの正規化デバイス座標 (-1.0 to 1.0) に変換
+			//ウインドウ座標系では左上が原点なため、Y軸が反転する。
 			float ndcX = (float)(xpos / SCR_WIDTH) * 2.0f - 1.0f;
 			float ndcY = 1.0f - (float)(ypos / SCR_HEIGHT) * 2.0f; // Y軸は反転
 
@@ -165,3 +200,92 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 		}
 	}
 }
+
+// シェーダーファイルを読み込んで文字列として返す関数
+std::string loadShaderSource(const char* filePath) {
+	std::ifstream shaderFile;
+	std::stringstream shaderStream;
+
+	// ファイルを開く
+	shaderFile.open(filePath);
+	if (shaderFile.is_open()) {
+		// ファイルの内容をストリームに読み込む
+		shaderStream << shaderFile.rdbuf();
+		shaderFile.close();
+		// ストリームから文字列に変換
+		return shaderStream.str();
+	}
+	else {
+		std::cerr << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ: " << filePath << std::endl;
+		return ""; // 空文字を返す
+	}
+}
+
+// シェーダーをコンパイルするヘルパー関数
+unsigned int compileShader(unsigned int type, const char* source) {
+	unsigned int id = glCreateShader(type); // シェーダーオブジェクト作成
+	glShaderSource(id, 1, &source, nullptr); // シェーダーソースをセット
+	glCompileShader(id); // コンパイル
+
+	// コンパイルエラーチェック
+	int success;
+	char infoLog[512];
+	glGetShaderiv(id, GL_COMPILE_STATUS, &success);
+	if (!success) {
+		glGetShaderInfoLog(id, 512, nullptr, infoLog);
+		std::cerr << "ERROR::SHADER::" << (type == GL_VERTEX_SHADER ? "VERTEX" : "FRAGMENT") << "::COMPILATION_FAILED\n" << infoLog << std::endl;
+		glDeleteShader(id); // 不要になったシェーダーオブジェクトを削除
+		return 0;
+	}
+	return id;
+}
+
+// 頂点シェーダーとフラグメントシェーダーをリンクしてシェーダープログラムを作成する関数
+unsigned int createShaderProgram(const char* vertexPath, const char* fragmentPath) {
+	// 1. シェーダーソースをファイルから読み込む
+	std::string vertexCodeStr = loadShaderSource(vertexPath);
+	std::string fragmentCodeStr = loadShaderSource(fragmentPath);
+	if (vertexCodeStr.empty() || fragmentCodeStr.empty()) {
+		return 0; // 読み込み失敗
+	}
+	const char* vertexShaderSource = vertexCodeStr.c_str();
+	const char* fragmentShaderSource = fragmentCodeStr.c_str();
+
+	// 2. 頂点シェーダーをコンパイル
+	unsigned int vertexShader = compileShader(GL_VERTEX_SHADER, vertexShaderSource);
+	if (vertexShader == 0) return 0;
+
+	// 3. フラグメントシェーダーをコンパイル
+	unsigned int fragmentShader = compileShader(GL_FRAGMENT_SHADER, fragmentShaderSource);
+	if (fragmentShader == 0) {
+		glDeleteShader(vertexShader); // 頂点シェーダーを削除
+		return 0;
+	}
+
+	// 4. シェーダープログラムを作成し、シェーダーをリンク
+	unsigned int program = glCreateProgram(); // プログラムオブジェクト作成
+	glAttachShader(program, vertexShader);     // 頂点シェーダーをアタッチ
+	glAttachShader(program, fragmentShader);   // フラグメントシェーダーをアタッチ
+	glLinkProgram(program);                    // リンク
+
+	// リンクエラーチェック
+	int success;
+	char infoLog[512];
+	glGetProgramiv(program, GL_LINK_STATUS, &success);
+	if (!success) {
+		glGetProgramInfoLog(program, 512, nullptr, infoLog);
+		std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+		glDeleteShader(vertexShader);   // リンク後には不要なので削除
+		glDeleteShader(fragmentShader); // 同上
+		glDeleteProgram(program);       // プログラムも削除
+		return 0;
+	}
+
+	// リンクが成功したら、個々のシェーダーオブジェクトは不要になるので削除
+	glDeleteShader(vertexShader);
+	glDeleteShader(fragmentShader);
+
+	return program; // 作成したシェーダープログラムのIDを返す
+}
+
+
