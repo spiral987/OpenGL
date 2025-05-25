@@ -30,6 +30,7 @@ bool isMouseButtonDown = false; // マウスボタンが押されているか
 
 
 //---------------------描画モード------------------------
+//enum:列挙型
 enum class DrawingMode {
 	TRIANGLE,
 	FREEHAND
@@ -108,7 +109,7 @@ int main() {
 
 
 	// シェーダープログラムの作成
-	shaderProgram = createShaderProgram("src/shader.vert", "src/shader.frag"); // ファイルパスを指定
+	shaderProgram = createShaderProgram("shader.vert", "shader.frag");  // ファイルパスを指定
 	if (shaderProgram == 0) {
 		// シェーダー作成失敗時の処理 (例えばプログラム終了)
 		glfwTerminate();
