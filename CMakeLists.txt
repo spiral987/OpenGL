@@ -49,6 +49,7 @@ target_include_directories(${EXECUTABLE_NAME} PRIVATE
     "Linking/include"  # gladやKHR, glmのヘッダなど
     "imgui"
     "imgui/backends"
+    "OpenGLtest/src"
 )
 
 # GLFWとOpenGLをリンク

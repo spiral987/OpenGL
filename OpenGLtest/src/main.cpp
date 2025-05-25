@@ -8,9 +8,10 @@
 #include <imgui.h>
 #include <backends/imgui_impl_glfw.h>
 #include <backends/imgui_impl_opengl3.h>
-//#include <glm/glm.hpp>
-//#include <glm/gtc/matrix_transform.hpp>
-//#include <glm/gtc/type_ptr.hpp>
+
+#include <shader.h>
+
+
 
 
 // --------------- グローバル変数 ----------------
@@ -24,7 +25,6 @@ unsigned int SCR_WIDTH = 800;
 unsigned int SCR_HEIGHT = 600;
 
 unsigned int VAO, VBO; // 描画オブジェクト (今回は共有)
-unsigned int shaderProgram;
 
 bool isMouseButtonDown = false; // マウスボタンが押されているか
 
@@ -48,13 +48,9 @@ void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods); // 新設
 
 
-//-----------------シェーダー関連のプロトタイプ宣言---------------------
-//シェーダーを読み込んで文字列として返す
-std::string loadShaderSource(const char* filePath);
-//shaderをコンパイルする関数
-unsigned int compileShader(unsigned int type, const char* source);
-//頂点シェーダーとフラグメントシェーダーをリンクしてシェーダープログラムを作成する
-unsigned int createShaderProgram(const char* vertexPath, const char* fragmentPath);
+//-----------------シェーダー関連---------------------
+Shader* mainShader = nullptr; // ポインタとして宣言 (またはShaderオブジェクト)
+
 
 int main() {
 	std::cout << "Hello World!" << std::endl;
@@ -109,9 +105,10 @@ int main() {
 
 
 	// シェーダープログラムの作成
-	shaderProgram = createShaderProgram("shader.vert", "shader.frag");  // ファイルパスを指定
-	if (shaderProgram == 0) {
-		// シェーダー作成失敗時の処理 (例えばプログラム終了)
+	//相対パスにしたいけどできない…
+	mainShader = new Shader("C:/Users/satou/source/repos/OpenGLDraw/OpenGLtest/src/shader.vert", "C:/Users/satou/source/repos/OpenGLDraw/OpenGLtest/src/shader.frag");  // ファイルパスを指定
+	if (mainShader == nullptr || mainShader->ID == 0) { // エラーチェック
+		std::cerr << "Failed to create shader program." << std::endl;
 		glfwTerminate();
 		return -1;
 	}
@@ -176,7 +173,7 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// シェーダープログラムを使用
-		glUseProgram(shaderProgram); // shaderProgram は事前に作成したシェーダープログラムのID
+		mainShader->use();        // ← 変更後
 
 		glBindVertexArray(VAO); // 描画に使うVAOをバインド
 
@@ -232,7 +229,9 @@ int main() {
 
 	glDeleteVertexArrays(1, &VAO); // VAOの削除
 	glDeleteBuffers(1, &VBO);   // VBOの削除
-	glDeleteProgram(shaderProgram);
+	//シェーダーの削除
+	delete mainShader; // ポインタの場合 (オブジェクトなら不要)
+	mainShader = nullptr;
 	glfwTerminate();
 
 
@@ -335,93 +334,4 @@ void cursor_position_callback(GLFWwindow* window, double xpos_window, double ypo
 		}
 	}
 }
-
-
-// シェーダーファイルを読み込んで文字列として返す関数
-std::string loadShaderSource(const char* filePath) {
-	std::ifstream shaderFile;
-	std::stringstream shaderStream;
-
-	// ファイルを開く
-	shaderFile.open(filePath);
-	if (shaderFile.is_open()) {
-		// ファイルの内容をストリームに読み込む
-		shaderStream << shaderFile.rdbuf();
-		shaderFile.close();
-		// ストリームから文字列に変換
-		return shaderStream.str();
-	}
-	else {
-		std::cerr << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ: " << filePath << std::endl;
-		return ""; // 空文字を返す
-	}
-}
-
-// シェーダーをコンパイルするヘルパー関数
-unsigned int compileShader(unsigned int type, const char* source) {
-	unsigned int id = glCreateShader(type); // シェーダーオブジェクト作成
-	glShaderSource(id, 1, &source, nullptr); // シェーダーソースをセット
-	glCompileShader(id); // コンパイル
-
-	// コンパイルエラーチェック
-	int success;
-	char infoLog[512];
-	glGetShaderiv(id, GL_COMPILE_STATUS, &success);
-	if (!success) {
-		glGetShaderInfoLog(id, 512, nullptr, infoLog);
-		std::cerr << "ERROR::SHADER::" << (type == GL_VERTEX_SHADER ? "VERTEX" : "FRAGMENT") << "::COMPILATION_FAILED\n" << infoLog << std::endl;
-		glDeleteShader(id); // 不要になったシェーダーオブジェクトを削除
-		return 0;
-	}
-	return id;
-}
-
-// 頂点シェーダーとフラグメントシェーダーをリンクしてシェーダープログラムを作成する関数
-unsigned int createShaderProgram(const char* vertexPath, const char* fragmentPath) {
-	// 1. シェーダーソースをファイルから読み込む
-	std::string vertexCodeStr = loadShaderSource(vertexPath);
-	std::string fragmentCodeStr = loadShaderSource(fragmentPath);
-	if (vertexCodeStr.empty() || fragmentCodeStr.empty()) {
-		return 0; // 読み込み失敗
-	}
-	const char* vertexShaderSource = vertexCodeStr.c_str();
-	const char* fragmentShaderSource = fragmentCodeStr.c_str();
-
-	// 2. 頂点シェーダーをコンパイル
-	unsigned int vertexShader = compileShader(GL_VERTEX_SHADER, vertexShaderSource);
-	if (vertexShader == 0) return 0;
-
-	// 3. フラグメントシェーダーをコンパイル
-	unsigned int fragmentShader = compileShader(GL_FRAGMENT_SHADER, fragmentShaderSource);
-	if (fragmentShader == 0) {
-		glDeleteShader(vertexShader); // 頂点シェーダーを削除
-		return 0;
-	}
-
-	// 4. シェーダープログラムを作成し、シェーダーをリンク
-	unsigned int program = glCreateProgram(); // プログラムオブジェクト作成
-	glAttachShader(program, vertexShader);     // 頂点シェーダーをアタッチ
-	glAttachShader(program, fragmentShader);   // フラグメントシェーダーをアタッチ
-	glLinkProgram(program);                    // リンク
-
-	// リンクエラーチェック
-	int success;
-	char infoLog[512];
-	glGetProgramiv(program, GL_LINK_STATUS, &success);
-	if (!success) {
-		glGetProgramInfoLog(program, 512, nullptr, infoLog);
-		std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-		glDeleteShader(vertexShader);   // リンク後には不要なので削除
-		glDeleteShader(fragmentShader); // 同上
-		glDeleteProgram(program);       // プログラムも削除
-		return 0;
-	}
-
-	// リンクが成功したら、個々のシェーダーオブジェクトは不要になるので削除
-	glDeleteShader(vertexShader);
-	glDeleteShader(fragmentShader);
-
-	return program; // 作成したシェーダープログラムのIDを返す
-}
-
 

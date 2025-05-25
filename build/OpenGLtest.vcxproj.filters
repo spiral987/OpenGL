@@ -7,6 +7,9 @@
     <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\OpenGLtest\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\OpenGLtest\src\shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\imgui\backends\imgui_impl_glfw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
