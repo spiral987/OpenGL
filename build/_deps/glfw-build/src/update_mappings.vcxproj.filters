@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\60873121eeda0e1d044e56a15b6e8284\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{03C0C3BC-178B-3871-AF13-8566BBFC30A6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{EF297E7E-DAA7-3577-91B4-D6C640CB14BE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

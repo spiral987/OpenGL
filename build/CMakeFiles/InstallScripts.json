@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/satou/source/repos/OpenGLDraw/build/cmake_install.cmake",
+		"C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/cmake_install.cmake",
+		"C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/src/cmake_install.cmake",
+		"C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/examples/cmake_install.cmake",
+		"C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
