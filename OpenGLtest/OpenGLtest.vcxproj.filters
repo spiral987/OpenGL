@@ -48,6 +48,9 @@
     <ClCompile Include="src\shader.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\renderer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\shader.frag">
@@ -59,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

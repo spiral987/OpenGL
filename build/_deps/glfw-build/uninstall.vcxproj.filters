@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\aed4853cc5c947623b83a0dc091a1706\uninstall.rule">
+    <CustomBuild Include="C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\12112de459ba9c5846ebf7d98b326ade\uninstall.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\CMakeFiles\uninstall" />
+    <None Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\CMakeFiles\uninstall" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{03C0C3BC-178B-3871-AF13-8566BBFC30A6}</UniqueIdentifier>
+      <UniqueIdentifier>{5510313F-8518-373E-8917-D14FE8331C95}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

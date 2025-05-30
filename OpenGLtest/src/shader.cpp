@@ -1,3 +1,5 @@
+//シェーダークラス：シェーダーの読み込み、コンパイル、リンク、シェーダープログラムの使用と破棄をカプセル化する。
+
 #include <shader.h> // 対応するヘッダファイルをインクルード
 #include <fstream>   // std::ifstream
 #include <sstream>   // std::stringstream

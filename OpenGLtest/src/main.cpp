@@ -106,41 +106,12 @@ int main() {
 
 	// シェーダープログラムの作成
 	//相対パスにしたいけどできない…
-	mainShader = new Shader("C:/Users/satou/source/repos/OpenGLDraw/OpenGLtest/src/shader.vert", "C:/Users/satou/source/repos/OpenGLDraw/OpenGLtest/src/shader.frag");  // ファイルパスを指定
+	mainShader = new Shader("shader.vert", "shader.frag");  // ファイルパスを指定
 	if (mainShader == nullptr || mainShader->ID == 0) { // エラーチェック
 		std::cerr << "Failed to create shader program." << std::endl;
 		glfwTerminate();
 		return -1;
 	}
-
-
-	// VAOとVBOを生成して設定
-	/*
-		VBOは頂点情報を格納するGPB側のバッファ(メモリ領域)
-		VAOはバッファオブジェクトの属性をまとめ、シェーダーへ橋渡しする
-
-		1.頂点データを準備
-		2.VBOに頂点データを格納
-		3.VAOにVBOをまとめる
-		4.シェーダーを適用し、ドローコールで描画
-	*/
-	glGenVertexArrays(1, &VAO);//VAOを生成
-	glGenBuffers(1, &VBO);//VBOを生成
-	glBindVertexArray(VAO); // VAOをバインド(選択)
-	glBindBuffer(GL_ARRAY_BUFFER, VBO); // VBOをバインド(選択)
-
-	//glBufferData(GL_ARRAY_BUFFER, size, data, usage) 
-	//実際の頂点データをVBOにアップロードする
-	//GL_DYNAMIC__DRAW=データが頻繁に更新されるよ
-	//千頂点分登録
-	glBufferData(GL_ARRAY_BUFFER, 1000 * 2 * sizeof(float), nullptr, GL_DYNAMIC_DRAW);
-
-	// 頂点属性の設定 (位置情報)
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(0);
-
-	glBindBuffer(GL_ARRAY_BUFFER, 0); // VBOのバインド解除
-	glBindVertexArray(0); // VAOのバインド解除
 
 	// ... (描画ループ内)
 	while (!glfwWindowShouldClose(window)) {

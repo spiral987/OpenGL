@@ -1,40 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\OpenGLtest\src\glad.c">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\OpenGLtest\src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\OpenGLtest\src\main.cpp">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\OpenGLtest\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\OpenGLtest\src\shader.cpp">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\OpenGLtest\src\renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\imgui\backends\imgui_impl_glfw.cpp">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\OpenGLtest\src\shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\imgui\backends\imgui_impl_opengl3.cpp">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\imgui\backends\imgui_impl_glfw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\imgui\imgui.cpp">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\imgui\backends\imgui_impl_opengl3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\imgui\imgui_draw.cpp">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\imgui\imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\imgui\imgui_tables.cpp">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\imgui\imgui_draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\imgui\imgui_widgets.cpp">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\imgui\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\imgui\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\satou\source\repos\OpenGLDraw\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\aiueo700\source\repos\OpenGL\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{EDDC7DD6-D336-3B66-A59F-26FA0C1E484E}</UniqueIdentifier>
+      <UniqueIdentifier>{38C4ED4E-2119-3E1B-9100-D5F0219F4757}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

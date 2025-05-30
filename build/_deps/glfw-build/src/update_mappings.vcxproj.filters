@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\60873121eeda0e1d044e56a15b6e8284\update_mappings.rule">
+    <CustomBuild Include="C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\9a20acdb2a492d6df901d4ddb25ad884\update_mappings.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\src\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\src\mappings.h.in">
+    <None Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\src\mappings.h.in">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\CMake\GenerateMappings.cmake" />
-    <None Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\src\CMakeFiles\update_mappings" />
+    <None Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\src\CMakeFiles\update_mappings" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{03C0C3BC-178B-3871-AF13-8566BBFC30A6}</UniqueIdentifier>
+      <UniqueIdentifier>{5510313F-8518-373E-8917-D14FE8331C95}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{EF297E7E-DAA7-3577-91B4-D6C640CB14BE}</UniqueIdentifier>
+      <UniqueIdentifier>{F5CFCD21-51EE-3500-9355-4FFDC87F8439}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -25,7 +25,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{D29A7460-AB64-30B2-949D-F892BFF7738B}</ProjectGuid>
+    <ProjectGuid>{0D598E69-494F-39E0-8440-B2D64CB50C7B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -112,11 +112,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\satou\source\repos\OpenGLDraw\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\aiueo700\source\repos\OpenGL\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/satou/source/repos/OpenGLDraw/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/aiueo700/source/repos/OpenGL/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/satou/source/repos/OpenGLDraw -BC:/Users/satou/source/repos/OpenGLDraw/build --check-stamp-file C:/Users/satou/source/repos/OpenGLDraw/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/aiueo700/source/repos/OpenGL -BC:/Users/aiueo700/source/repos/OpenGL/build --check-stamp-file C:/Users/aiueo700/source/repos/OpenGL/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -124,12 +124,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\PatchInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\UpdateInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitclone.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitupdate.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\stepscript.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeCCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeCXXCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeRCCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\PatchInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\UpdateInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitclone.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitupdate.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\stepscript.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeCCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeCXXCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeRCCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/satou/source/repos/OpenGLDraw/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/aiueo700/source/repos/OpenGL/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/satou/source/repos/OpenGLDraw -BC:/Users/satou/source/repos/OpenGLDraw/build --check-stamp-file C:/Users/satou/source/repos/OpenGLDraw/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/aiueo700/source/repos/OpenGL -BC:/Users/aiueo700/source/repos/OpenGL/build --check-stamp-file C:/Users/aiueo700/source/repos/OpenGL/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -137,12 +137,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\PatchInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\UpdateInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitclone.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitupdate.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\stepscript.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeCCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeCXXCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeRCCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\PatchInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\UpdateInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitclone.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitupdate.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\stepscript.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeCCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeCXXCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeRCCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/satou/source/repos/OpenGLDraw/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/aiueo700/source/repos/OpenGL/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/satou/source/repos/OpenGLDraw -BC:/Users/satou/source/repos/OpenGLDraw/build --check-stamp-file C:/Users/satou/source/repos/OpenGLDraw/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/aiueo700/source/repos/OpenGL -BC:/Users/aiueo700/source/repos/OpenGL/build --check-stamp-file C:/Users/aiueo700/source/repos/OpenGL/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -150,12 +150,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\PatchInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\UpdateInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitclone.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitupdate.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\stepscript.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeCCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeCXXCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeRCCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\PatchInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\UpdateInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitclone.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitupdate.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\stepscript.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeCCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeCXXCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeRCCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/satou/source/repos/OpenGLDraw/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/aiueo700/source/repos/OpenGL/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/satou/source/repos/OpenGLDraw -BC:/Users/satou/source/repos/OpenGLDraw/build --check-stamp-file C:/Users/satou/source/repos/OpenGLDraw/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/aiueo700/source/repos/OpenGL -BC:/Users/aiueo700/source/repos/OpenGL/build --check-stamp-file C:/Users/aiueo700/source/repos/OpenGL/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -163,8 +163,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\PatchInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\UpdateInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitclone.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitupdate.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\stepscript.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeCCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeCXXCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeRCCompiler.cmake;C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\4.0.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\PatchInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\UpdateInfo.txt.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitclone.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\gitupdate.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\ExternalProject\stepscript.cmake.in;C:\Program Files\CMake\share\cmake-4.0\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeCCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeCXXCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeRCCompiler.cmake;C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\4.0.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
@@ -172,134 +172,134 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\ZERO_CHECK.vcxproj">
-      <Project>{FB0E965E-8ED0-3BE5-A874-F21C959B001F}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\ZERO_CHECK.vcxproj">
+      <Project>{4367985E-7BD7-3396-BF66-05E747F15519}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\OpenGLtest.vcxproj">
-      <Project>{3AD2D237-4529-3E1F-8FD9-F632280A9590}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\OpenGLtest.vcxproj">
+      <Project>{689FB166-99A3-3345-85BA-D75A0E6305BF}</Project>
       <Name>OpenGLtest</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\examples\boing.vcxproj">
-      <Project>{E92866BD-3428-3457-B4F6-3CBB41EA1F39}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\examples\boing.vcxproj">
+      <Project>{CAE64A39-C3B2-3788-ADA8-68C4224FC03C}</Project>
       <Name>boing</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\clipboard.vcxproj">
-      <Project>{63B88426-40B4-30D8-AF40-0803FEB831B8}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\clipboard.vcxproj">
+      <Project>{A3BDB339-F664-3FFD-80FB-221E1F492C35}</Project>
       <Name>clipboard</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\cursor.vcxproj">
-      <Project>{99174264-DEAA-37D2-A955-2AF24B39E7E2}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\cursor.vcxproj">
+      <Project>{66331486-BC7A-3AEB-956B-5EA10946E726}</Project>
       <Name>cursor</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\empty.vcxproj">
-      <Project>{FBA63D9C-8BA5-3787-8CBF-B37760DB6F09}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\empty.vcxproj">
+      <Project>{15257FC8-426B-3ED4-8FAE-C2AB7547CE87}</Project>
       <Name>empty</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\events.vcxproj">
-      <Project>{4F5B7279-8B67-352E-8162-FB8B4939CDB2}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\events.vcxproj">
+      <Project>{6640AB3F-7F6B-3E7B-B7CB-554A3F857A50}</Project>
       <Name>events</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\gamma.vcxproj">
-      <Project>{000623A7-5902-32A4-BF9C-F7DE6E416D08}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\gamma.vcxproj">
+      <Project>{3B942DF1-DFAD-35F3-9466-A54690E99C52}</Project>
       <Name>gamma</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\examples\gears.vcxproj">
-      <Project>{A15E6D80-CD58-339C-BAA2-86C444389BEC}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\examples\gears.vcxproj">
+      <Project>{7509D65E-DB75-3B57-8502-2EAF1B959BF9}</Project>
       <Name>gears</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\src\glfw.vcxproj">
-      <Project>{0A8F49A6-F56D-3FDE-A5EB-D6BF790EBC20}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\src\glfw.vcxproj">
+      <Project>{67076E27-67CC-3BF7-B62F-B92DE78C4ED3}</Project>
       <Name>glfw</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\glfwinfo.vcxproj">
-      <Project>{6BCAEBDD-A7F3-35CE-9C14-68C41EF93C25}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\glfwinfo.vcxproj">
+      <Project>{9CBC8EFD-CB9A-3658-A53F-259345286509}</Project>
       <Name>glfwinfo</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\examples\heightmap.vcxproj">
-      <Project>{38F2D6DB-DFB9-3B9E-BC5B-55FF0E6C3DDD}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\examples\heightmap.vcxproj">
+      <Project>{CC77D99F-328A-3043-8B6F-41EBB2837C29}</Project>
       <Name>heightmap</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\icon.vcxproj">
-      <Project>{D203D518-5A24-3454-BB3B-0896C923A595}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\icon.vcxproj">
+      <Project>{2DF4EF8E-D96F-3947-BBE4-7EB222A0EDD2}</Project>
       <Name>icon</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\iconify.vcxproj">
-      <Project>{CC1DD85C-6541-3E7A-BB92-636614EF3806}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\iconify.vcxproj">
+      <Project>{F02F60AE-232D-3D35-AE88-22AAD1E11872}</Project>
       <Name>iconify</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\inputlag.vcxproj">
-      <Project>{D0FA850E-9607-3025-8E71-927CE1AD6F91}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\inputlag.vcxproj">
+      <Project>{753FA98E-6146-349B-A5D5-59F1BBDB6AB4}</Project>
       <Name>inputlag</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\joysticks.vcxproj">
-      <Project>{0B2AD9FB-F3D7-3DCA-AE9F-183AFF3C2408}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\joysticks.vcxproj">
+      <Project>{D75983E6-E42F-338A-9E80-FC5D4642124D}</Project>
       <Name>joysticks</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\monitors.vcxproj">
-      <Project>{D8E325A4-CD6D-3477-9175-CE6ECA3589DB}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\monitors.vcxproj">
+      <Project>{36818F47-9BF9-30D5-985E-0BFB8E47EFAB}</Project>
       <Name>monitors</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\msaa.vcxproj">
-      <Project>{4459D18A-2668-3A82-B3AB-5F48292B5602}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\msaa.vcxproj">
+      <Project>{5FBBC848-8250-3680-99B8-02CD24B1F810}</Project>
       <Name>msaa</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\examples\offscreen.vcxproj">
-      <Project>{E3DF68AB-4419-36FD-9C18-B1183CE67C7F}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\examples\offscreen.vcxproj">
+      <Project>{B4A727CC-5D4D-321F-B5F1-C9D042B4A605}</Project>
       <Name>offscreen</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\opacity.vcxproj">
-      <Project>{2D864611-DD11-3354-A526-FA401CD13AD7}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\opacity.vcxproj">
+      <Project>{80D4218B-0E87-3876-A111-6FFB182A6D49}</Project>
       <Name>opacity</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\examples\particles.vcxproj">
-      <Project>{00B4E80B-AF5B-3A91-8D3A-58972BF00795}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\examples\particles.vcxproj">
+      <Project>{4CBEA5E6-1225-3B49-9D15-C03277644B57}</Project>
       <Name>particles</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\reopen.vcxproj">
-      <Project>{9CEA3E8B-726B-3872-8CF8-D4AFBC6827EB}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\reopen.vcxproj">
+      <Project>{F18DB860-678D-3B4B-8518-A22DC6E9152B}</Project>
       <Name>reopen</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\examples\sharing.vcxproj">
-      <Project>{3534A3FA-4696-3D1A-8DA0-D372F429961C}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\examples\sharing.vcxproj">
+      <Project>{AA45D117-DD28-3640-A013-CDD826A0FC97}</Project>
       <Name>sharing</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\examples\simple.vcxproj">
-      <Project>{6337F5A4-D839-32BD-8974-99CBD4E89500}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\examples\simple.vcxproj">
+      <Project>{501C7FAC-BAAC-319D-B901-1FEFF9EA0D32}</Project>
       <Name>simple</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\examples\splitview.vcxproj">
-      <Project>{EBFAD67B-9310-3041-88E9-7456967B777F}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\examples\splitview.vcxproj">
+      <Project>{78D4EFBA-840E-320D-B28F-C2E9FA5580DA}</Project>
       <Name>splitview</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\tearing.vcxproj">
-      <Project>{B9A936DF-037F-3FB7-BBD8-CAE8E2A324C7}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\tearing.vcxproj">
+      <Project>{1D811D08-B1E1-39BE-92EB-843CB3E9B6CD}</Project>
       <Name>tearing</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\threads.vcxproj">
-      <Project>{DE68068D-1A28-35E7-9CCC-CB3D137FF58F}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\threads.vcxproj">
+      <Project>{59F18AD6-128D-31D8-BCCA-B1E3BB768A17}</Project>
       <Name>threads</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\timeout.vcxproj">
-      <Project>{74D17EB9-D83E-3E8D-B91A-B9AF9111AA5C}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\timeout.vcxproj">
+      <Project>{905CCF40-A9AA-3A01-98E5-668C2277BBC8}</Project>
       <Name>timeout</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\title.vcxproj">
-      <Project>{F9F60FC1-5BFE-33FC-A141-93F37D35BCBD}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\title.vcxproj">
+      <Project>{98546868-0CC9-3BF3-9EDB-DA830D610B68}</Project>
       <Name>title</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj">
-      <Project>{A2068706-3EFC-3ADF-8368-8C7C67E20989}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj">
+      <Project>{AEEBFE6B-B30D-37B5-8C4F-51EE155B60B7}</Project>
       <Name>triangle-vulkan</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\examples\wave.vcxproj">
-      <Project>{8EA199F7-F37E-30B8-997C-1EB4BEF4A14C}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\examples\wave.vcxproj">
+      <Project>{FEF4502F-B53D-3EBE-9B3B-DD9622A507C1}</Project>
       <Name>wave</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\windows.vcxproj">
-      <Project>{5A7705E2-4812-3488-A789-DB8ABECFBFED}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\windows.vcxproj">
+      <Project>{89791778-57E5-33B8-B277-2F287E284BB0}</Project>
       <Name>windows</Name>
     </ProjectReference>
   </ItemGroup>

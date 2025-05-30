@@ -4,6 +4,6 @@ message(VERBOSE "Executing update step for glfw")
 
 block(SCOPE_FOR VARIABLES)
 
-include("C:/Users/satou/source/repos/OpenGLDraw/build/CMakeFiles/fc-tmp/glfw/glfw-gitupdate.cmake")
+include("C:/Users/aiueo700/source/repos/OpenGL/build/CMakeFiles/fc-tmp/glfw/glfw-gitupdate.cmake")
 
 endblock()

@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{D8E325A4-CD6D-3477-9175-CE6ECA3589DB}</ProjectGuid>
+    <ProjectGuid>{36818F47-9BF9-30D5-985E-0BFB8E47EFAB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">monitors.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">monitors</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">monitors.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">monitors</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">monitors.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">monitors</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">monitors.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">monitors</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -105,10 +105,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -121,8 +121,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/Debug/monitors.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/Debug/monitors.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/Debug/monitors.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/Debug/monitors.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -131,7 +131,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>
@@ -151,10 +151,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -167,8 +167,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/Release/monitors.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/Release/monitors.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/Release/monitors.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/Release/monitors.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -177,7 +177,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>
@@ -197,10 +197,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -213,8 +213,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/MinSizeRel/monitors.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/MinSizeRel/monitors.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/MinSizeRel/monitors.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/MinSizeRel/monitors.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -223,7 +223,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -242,10 +242,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps;C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps;C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -258,8 +258,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/RelWithDebInfo/monitors.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/RelWithDebInfo/monitors.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/RelWithDebInfo/monitors.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/RelWithDebInfo/monitors.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -267,11 +267,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\tests\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\tests\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-src/tests/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-src/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/satou/source/repos/OpenGLDraw -BC:/Users/satou/source/repos/OpenGLDraw/build --check-stamp-file C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/aiueo700/source/repos/OpenGL -BC:/Users/aiueo700/source/repos/OpenGL/build --check-stamp-file C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -280,11 +280,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-src/tests/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-src/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/satou/source/repos/OpenGLDraw -BC:/Users/satou/source/repos/OpenGLDraw/build --check-stamp-file C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/aiueo700/source/repos/OpenGL -BC:/Users/aiueo700/source/repos/OpenGL/build --check-stamp-file C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -293,11 +293,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-src/tests/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-src/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/satou/source/repos/OpenGLDraw -BC:/Users/satou/source/repos/OpenGLDraw/build --check-stamp-file C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/aiueo700/source/repos/OpenGL -BC:/Users/aiueo700/source/repos/OpenGL/build --check-stamp-file C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -306,11 +306,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-src/tests/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-src/tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/satou/source/repos/OpenGLDraw -BC:/Users/satou/source/repos/OpenGLDraw/build --check-stamp-file C:/Users/satou/source/repos/OpenGLDraw/build/_deps/glfw-build/tests/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/aiueo700/source/repos/OpenGL -BC:/Users/aiueo700/source/repos/OpenGL/build --check-stamp-file C:/Users/aiueo700/source/repos/OpenGL/build/_deps/glfw-build/tests/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -319,27 +319,27 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\tests\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\tests\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\tests\monitors.c" />
-    <ClInclude Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps\getopt.h" />
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps\getopt.c" />
-    <ClInclude Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps\glad\gl.h" />
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps\glad_gl.c" />
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\tests\monitors.c" />
+    <ClInclude Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps\getopt.h" />
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps\getopt.c" />
+    <ClInclude Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps\glad\gl.h" />
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps\glad_gl.c" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\ZERO_CHECK.vcxproj">
-      <Project>{FB0E965E-8ED0-3BE5-A874-F21C959B001F}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\ZERO_CHECK.vcxproj">
+      <Project>{4367985E-7BD7-3396-BF66-05E747F15519}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-build\src\glfw.vcxproj">
-      <Project>{0A8F49A6-F56D-3FDE-A5EB-D6BF790EBC20}</Project>
+    <ProjectReference Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-build\src\glfw.vcxproj">
+      <Project>{67076E27-67CC-3BF7-B62F-B92DE78C4ED3}</Project>
       <Name>glfw</Name>
     </ProjectReference>
   </ItemGroup>

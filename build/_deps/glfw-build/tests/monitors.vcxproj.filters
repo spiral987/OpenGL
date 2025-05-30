@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\tests\monitors.c">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\tests\monitors.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps\getopt.c">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps\getopt.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps\glad_gl.c">
+    <ClCompile Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps\glad_gl.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps\getopt.h">
+    <ClInclude Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps\getopt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\deps\glad\gl.h">
+    <ClInclude Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\deps\glad\gl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\satou\source\repos\OpenGLDraw\build\_deps\glfw-src\tests\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\aiueo700\source\repos\OpenGL\build\_deps\glfw-src\tests\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{EF297E7E-DAA7-3577-91B4-D6C640CB14BE}</UniqueIdentifier>
+      <UniqueIdentifier>{F5CFCD21-51EE-3500-9355-4FFDC87F8439}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{EDDC7DD6-D336-3B66-A59F-26FA0C1E484E}</UniqueIdentifier>
+      <UniqueIdentifier>{38C4ED4E-2119-3E1B-9100-D5F0219F4757}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
