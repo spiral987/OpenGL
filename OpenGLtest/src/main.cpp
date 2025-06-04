@@ -53,7 +53,7 @@ Shader* mainShader = nullptr; // ポインタとして宣言 (またはShaderオブジェクト)
 
 
 int main() {
-	std::cout << "Hello World!" << std::endl;
+	std::cout << "init" << std::endl;
 	
 	// GLFW初期化
 	if (!glfwInit()) {
