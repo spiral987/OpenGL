@@ -53,7 +53,7 @@ Shader* mainShader = nullptr; // ポインタとして宣言 (またはShaderオブジェクト)
 
 
 int main() {
-	std::cout << "Hello World!" << std::endl;
+	std::cout << "init" << std::endl;
 	
 	// GLFW初期化
 	if (!glfwInit()) {
@@ -106,7 +106,7 @@ int main() {
 
 	// シェーダープログラムの作成
 	//相対パスにしたいけどできない…
-	mainShader = new Shader("shader.vert", "shader.frag");  // ファイルパスを指定
+	mainShader = new Shader("shader.vert", "shader.frag");  // ファイルパスを指定してインスタンス生成
 	if (mainShader == nullptr || mainShader->ID == 0) { // エラーチェック
 		std::cerr << "Failed to create shader program." << std::endl;
 		glfwTerminate();
@@ -144,7 +144,7 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// シェーダープログラムを使用
-		mainShader->use();        // ← 変更後
+		mainShader->use();
 
 		glBindVertexArray(VAO); // 描画に使うVAOをバインド
 

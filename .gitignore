@@ -19,3 +19,6 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+
+# CMake build files
+build/
